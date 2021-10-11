@@ -4,7 +4,7 @@ void swtch(struct context ** old, struct context * new);
 .globl swtch
 swtch:
 # save old regs
-movl 4(%esp), %eax # put old ptr into eax
+movl 4(%esp), %eax ; put old ptr into eax
 popl 0(%eax)       # save the old ip
 movl %esp, 4(%eax) # save stack
 movl %ebx, 8(%eax) # save other regs
